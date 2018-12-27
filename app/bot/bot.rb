@@ -8,10 +8,10 @@ Facebook::Messenger::Subscriptions.subscribe(
 )
 
 Bot.on :message do |message|
-    if message.text.include? "simon"
-        message.reply(text: 'Bonjour maître simon')
-    else
+
+
+
         message.reply(text: 'Reponse par defaut')
-    end
+
 
 end
