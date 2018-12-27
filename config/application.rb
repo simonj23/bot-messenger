@@ -2,11 +2,6 @@ require_relative 'boot'
 
 require 'rails/all'
 
-Facebook::Messenger::Subscriptions.subscribe(
-  access_token: ENV["ACCESS_TOKEN"],
-  subscribed_fields: %w[feed mention name]
-)
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
