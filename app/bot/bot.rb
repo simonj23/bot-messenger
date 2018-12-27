@@ -9,9 +9,14 @@ Facebook::Messenger::Subscriptions.subscribe(
 
 Bot.on :message do |message|
 
-
-
-        message.reply(text: 'Reponse par defaut')
-
+    if message.text.include? "Bonjour"
+        message.reply(text: "Salut l'humain !")
+    elsif message.text.include? "Ça va ?"
+        message.reply(text: "Je suis un robot, je n'est donc pas d'émotion.")
+    elsif message.text.include? "Comment t'appelles tu ?"
+        message.reply(text: 'Mon créateur s\'appelle Simon !')
+    else
+        message.reply(text: 'Je suis en train d\'apprendre et ne sais pas quoi répondre')
+    end
 
 end
