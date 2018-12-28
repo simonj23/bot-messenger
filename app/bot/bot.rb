@@ -9,6 +9,37 @@ Facebook::Messenger::Subscriptions.subscribe(
 
 Bot.on :message do |message|
 
+
+    case message.text
+    when "Buttons"
+        message.reply(
+          attachment: {
+            type: 'template',
+            payload: {
+              template_type: 'button',
+              text: 'Who is your favorite player ?',
+              buttons: [
+                { type: 'postback', title: 'Yes', payload: 'MESSI' },
+                { type: 'postback', title: 'No', payload: 'RONALDO' }
+              ]
+            }
+          }
+        )
+    when "Quick replies"
+        message.reply(
+          text: 'Human, who is your favorite bot?',
+          quick_replies: [
+            {
+              content_type: 'text',
+              title: 'You are!',
+              payload: 'HARMLESS'
+            }
+          ]
+        )
+
+
+
+    # easy
     if message.text.include? "Bonjour"
         message.reply(text: "Salut l'humain !")
     elsif message.text.include? "Ça va ?"
@@ -19,4 +50,13 @@ Bot.on :message do |message|
         message.reply(text: 'Je suis en train d\'apprendre et ne sais pas quoi répondre')
     end
 
+end
+
+Bot.on :postback do |postback|
+  case postback.payload
+  when 'MESSI'
+    puts "Tu préfères Messi !"
+  when 'RONALDO'
+    puts "Tu préfères Ronaldo !"
+  end
 end
