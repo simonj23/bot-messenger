@@ -36,7 +36,7 @@ Bot.on :message do |message|
             }
           ]
         )
-
+    end
 
 
     # easy
