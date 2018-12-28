@@ -9,7 +9,6 @@ Facebook::Messenger::Subscriptions.subscribe(
 
 Bot.on :message do |message|
 
-
     case message.text
     when "Buttons"
         message.reply(
@@ -19,8 +18,8 @@ Bot.on :message do |message|
               template_type: 'button',
               text: 'Who is your favorite player ?',
               buttons: [
-                { type: 'postback', title: 'Yes', payload: 'MESSI' },
-                { type: 'postback', title: 'No', payload: 'RONALDO' }
+                { type: 'postback', title: 'Messi', payload: '1' },
+                { type: 'postback', title: 'Ronaldo', payload: '2' }
               ]
             }
           }
@@ -46,17 +45,16 @@ Bot.on :message do |message|
         message.reply(text: "Je suis un robot, je n'ai donc pas d'émotion.")
     elsif message.text.include? "Comment t'appelles tu ?"
         message.reply(text: 'Mon créateur s\'appelle Simon !')
-    else
-        message.reply(text: 'Je suis en train d\'apprendre et ne sais pas quoi répondre')
     end
 
+    Bot.on :postback do |postback|
+      case postback.payload
+      when '1'
+        puts "Tu préfères Messi !"
+      when '2'
+        puts "Tu préfères Ronaldo !"
+      end
+    end
 end
 
-Bot.on :postback do |postback|
-  case postback.payload
-  when 'MESSI'
-    puts "Tu préfères Messi !"
-  when 'RONALDO'
-    puts "Tu préfères Ronaldo !"
-  end
-end
+
