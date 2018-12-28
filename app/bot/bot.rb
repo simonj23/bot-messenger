@@ -11,7 +11,7 @@ Facebook::Messenger::Subscriptions.subscribe(
 Bot.on :message do |message|
 
   message.typing_on
-  sleep(1.5)
+  sleep 1
   message.typing_off
 
   # easy
@@ -22,7 +22,7 @@ Bot.on :message do |message|
   elsif message.text.include? "Comment t'appelles tu ?"
       message.reply(text: 'Mon créateur s\'appelle Simon !')
   else
-      type(message)
+
   end
 
 end
