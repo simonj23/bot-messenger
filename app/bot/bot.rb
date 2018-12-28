@@ -6,27 +6,24 @@ Facebook::Messenger::Subscriptions.subscribe(
   access_token: ENV["ACCESS_TOKEN"],
   subscribed_fields: %w[feed mention name]
 )
-def type(message)
-  message.typing_on
-  sleep(1.5)
-  message.typing_off
-end
+
 
 Bot.on :message do |message|
 
-    type(message)
+  message.typing_on
+  sleep(1.5)
+  message.typing_off
 
-
-    # easy
-    if message.text.include? "Bonjour"
-        message.reply(text: "Salut l'humain !")
-    elsif message.text.include? "Ça va ?"
-        message.reply(text: "Je suis un robot, je n'ai donc pas d'émotion.")
-    elsif message.text.include? "Comment t'appelles tu ?"
-        message.reply(text: 'Mon créateur s\'appelle Simon !')
-    else
-        type(message)
-    end
+  # easy
+  if message.text.include? "Bonjour"
+      message.reply(text: "Salut l'humain !")
+  elsif message.text.include? "Ça va ?"
+      message.reply(text: "Je suis un robot, je n'ai donc pas d'émotion.")
+  elsif message.text.include? "Comment t'appelles tu ?"
+      message.reply(text: 'Mon créateur s\'appelle Simon !')
+  else
+      type(message)
+  end
 
 end
 
