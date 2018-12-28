@@ -47,14 +47,14 @@ Bot.on :message do |message|
         message.reply(text: 'Mon créateur s\'appelle Simon !')
     end
 
-    Bot.on :postback do |postback|
-      case postback.payload
-      when '1'
-        puts "Tu préfères Messi !"
-      when '2'
-        puts "Tu préfères Ronaldo !"
-      end
-    end
 end
 
+Bot.on :postback do |postback|
+  case postback.payload
+  when '1'
+    puts "Tu préfères Messi !"
+  when '2'
+    puts "Tu préfères Ronaldo !"
+  end
+end
 
