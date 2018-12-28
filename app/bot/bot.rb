@@ -9,33 +9,6 @@ Facebook::Messenger::Subscriptions.subscribe(
 
 Bot.on :message do |message|
 
-    case message.text
-    when "Buttons"
-        message.reply(
-          attachment: {
-            type: 'template',
-            payload: {
-              template_type: 'button',
-              text: 'Who is your favorite player ?',
-              buttons: [
-                { type: 'postback', title: 'Messi', payload: '1' },
-                { type: 'postback', title: 'Ronaldo', payload: '2' }
-              ]
-            }
-          }
-        )
-    when "Quick replies"
-        message.reply(
-          text: 'Human, who is your favorite bot?',
-          quick_replies: [
-            {
-              content_type: 'text',
-              title: 'You are!',
-              payload: 'HARMLESS'
-            }
-          ]
-        )
-    end
 
 
     # easy
