@@ -9,11 +9,13 @@ Facebook::Messenger::Subscriptions.subscribe(
 
 Bot.on :message do |message|
 
-    if message.text.downcase.include? "Bonjour" | "Hello" | "Yo" | "Coucou"
+    puts "TEst".downcase
+
+    if message.text.downcase.include? "bonjour" | "hello" | "yo" | "coucou"
         message.reply(text: "Salut l'humain !")
-    elsif message.text.downcase.include? "Ça va ?"
+    elsif message.text.downcase.include? "ça va"
         message.reply(text: "Je suis un robot, je n'ai donc pas d'émotion.")
-    elsif message.text.downcase.include? "Comment t'appelles tu ?"
+    elsif message.text.downcase.include? "comment t'appelles tu ?" | "quel est ton nom"
         message.reply(text: 'Mon créateur s\'appelle Simon !')
     else
         message.reply(text: 'Ne sais pas quoi répondre')
