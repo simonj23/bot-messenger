@@ -7,7 +7,7 @@ Facebook::Messenger::Subscriptions.subscribe(
   subscribed_fields: %w[feed mention name]
 )
 
-puts "TEst".downcase
+puts "test"
 
 Bot.on :message do |message|
 
