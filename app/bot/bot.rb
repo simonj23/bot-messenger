@@ -7,9 +7,10 @@ Facebook::Messenger::Subscriptions.subscribe(
   subscribed_fields: %w[feed mention name]
 )
 
+puts "TEst".downcase
+
 Bot.on :message do |message|
 
-    puts "TEst".downcase
 
     if message.text.downcase.include? "bonjour" | "hello" | "yo" | "coucou"
         message.reply(text: "Salut l'humain !")
