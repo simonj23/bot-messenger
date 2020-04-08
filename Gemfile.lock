@@ -67,7 +67,7 @@ GEM
     facebook-messenger (1.1.2)
       httparty (~> 0.13, >= 0.13.7)
       rack (>= 1.4.5)
-    ffi (1.9.23)
+    ffi (1.12.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     httparty (0.16.3)
