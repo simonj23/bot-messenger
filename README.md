@@ -1,24 +1,4 @@
-# README
+# Bot messenger
+Essai que j'avais fait pour faire un **bot messenger en rails**. J'aurais pu mettre des trucs genre allume mes lumières, puis il call l'api philips hue et il les allume - mais j'avais pas fait ;)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![imagemessenger](https://cdn2.nextinpact.com/images/bd/wide-linked-media/18015.jpg)
